@@ -25,7 +25,8 @@ SECRET_KEY = 'django-insecure-*96p+#7a$$h$wn4sdkpr$gh(60h=4(01bukk^o(1i#4cf&ge#2
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['apitarefas.onrender.com', 'https://heartfelt-gumdrop-553ee6.netlify.app' ,'localhost', '127.0.0.1', '44.226.145.213', '54.187.200.255', '44.229.200.200']
+
 
 
 # Application definition
@@ -44,9 +45,12 @@ INSTALLED_APPS = [
     'rest_framework_simplejwt',
     #Api
     'api',
+    #Cors
+    'corsheaders',
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -140,7 +144,7 @@ USE_I18N = True
 
 USE_TZ = True
 
-
+CORS_ORIGIN_ALLOW_ALL = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
